@@ -10,8 +10,7 @@ namespace OnlineStore.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<OnlineStore.Models.ApplicationDbContext>
     {
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
