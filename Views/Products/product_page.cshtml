@@ -1,0 +1,84 @@
+﻿@model OnlineStore.Models.Product
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Product - Brand</title>
+    <link rel="stylesheet" href="../../style/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asul">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link rel="stylesheet" href="../../style/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../style/assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="../../style/assets/css/Auto-Modal-Popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="../../style/assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="../../style/assets/css/smoothproducts.css">
+</head>
+
+<body>
+    <main class="page product-page">
+        <section class="clean-block clean-product dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info" style="margin-top: 23px;">Product Page</h2>
+                </div>
+                <div class="block-content">
+                    <div class="product-info">
+                        <div class="row">
+                            <div class="col-md-6 col-xl-5" style="max-height: 411.656px;"><img src=@Url.Content(Model.Image) style="width: 100%;height: 100%;"></div>
+                            <div class="col-md-6">
+                                <div class="info">
+                                    
+                                    <div class="price">
+                                        <h3>$@Model.Price</h3>
+                                    </div><button class="btn btn-primary add-to-cart" type="button" data-product-id="@Model.Id"><i class="icon-basket"></i>Add to Cart</button>
+                                    <div class="summary">
+                                        <p>@Model.description<br></p>
+                                    </div>
+                                    <div>
+                                        <a href="@Url.Action("Edit", new {id = Model.Id})">
+
+                                            <button class="btn btn-primary" type="button" style="margin-bottom: 0px; background-color: rgb(50, 204, 25);"><i class="icon-refresh"></i> UPDATE</button>
+                                        </a>
+                                    </div>
+                                    <div style="margin-top: 11px;">
+                                        <a href="@Url.Action("Delete", "Products",new{id=Model.Id})">
+                                            <button class="btn btn-primary delete" type="button" style="margin-bottom: 0px; background-color: rgb(255, 0, 0);"><i class="icon-trash"></i>DELETE</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../../style/assets/js/jquery.min.js"></script>
+    <script src="../../style/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../style/assets/js/smart-forms.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="../../style/assets/js/smoothproducts.min.js"></script>
+    <script src="../../style/assets/js/theme.js"></script>
+    <script src="../../style/assets/js/Auto-Modal-Popup.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('.add-to-cart').on('click',
+            function() {
+                var button = $(this);
+                $.ajax({
+                    url: '/Cart/AddtoCart/' + (button.attr("data-product-id")),
+                    success: function() {
+                    }
+                });
+            });
+    })
+    </script>
+</body>
+
+</html>

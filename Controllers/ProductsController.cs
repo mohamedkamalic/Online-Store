@@ -22,5 +22,15 @@ namespace OnlineStore.Controllers
 
             return View("CatalogPage", products);
         }
+
+
+        public ActionResult Details(int id)
+        {
+            var productIndb = _context.Products.SingleOrDefault(p => p.Id == id);
+            if (productIndb == null)
+                return HttpNotFound();
+
+            return View("product-page", productIndb);
+        }
     }
 }
