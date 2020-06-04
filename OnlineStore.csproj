@@ -186,6 +186,10 @@
     <Compile Include="Migrations\202005291145279_PopulateCategory.Designer.cs">
       <DependentUpon>202005291145279_PopulateCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006041108572_AddcategoryFields.cs" />
+    <Compile Include="Migrations\202006041108572_AddcategoryFields.Designer.cs">
+      <DependentUpon>202006041108572_AddcategoryFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -279,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005291145279_PopulateCategory.resx">
       <DependentUpon>202005291145279_PopulateCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006041108572_AddcategoryFields.resx">
+      <DependentUpon>202006041108572_AddcategoryFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Online_Store.Models;
 
 namespace OnlineStore.Models
 {
@@ -24,5 +25,10 @@ namespace OnlineStore.Models
         // [Required]
         public String Image { get; set; }
         public String description { get; set; }
+
+        [Display(Name = "Category")]
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
+
     }
 }
