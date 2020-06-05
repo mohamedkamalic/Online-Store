@@ -166,6 +166,14 @@ namespace OnlineStore.Controllers
 
         }
 
+        public ActionResult Search(String search)
+        {
+
+            var products = _context.Products.Where(p => p.Category.Name == search).ToList();
+
+
+            return View("catalog-page", products);
+        }
 
 
     }
