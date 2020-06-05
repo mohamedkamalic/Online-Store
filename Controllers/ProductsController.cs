@@ -142,6 +142,31 @@ namespace OnlineStore.Controllers
 
         }
 
+        public ActionResult Delete(int id)
+        {
+            var product = _context.Products.SingleOrDefault(p => p.Id == id);
+
+            //get the attached value from cart table to delete it fist because of foreign key
+            //var cartitem = _context.Cart.SingleOrDefault(c => c.Product_id == id);
+            //if (cartitem != null)
+              //  _context.Cart.Remove(cartitem);
+            if (product != null)
+            {
+                _context.Products.Remove(product);
+                _context.SaveChanges();
+                //delete image of product
+                var oldimgPath = Server.MapPath(product.Image);
+                System.IO.File.Delete(oldimgPath);
+
+            }
+
+
+            return RedirectToAction("Index");
+
+
+        }
+
+
 
     }
 }
