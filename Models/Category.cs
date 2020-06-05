@@ -16,9 +16,5 @@ namespace OnlineStore.Models
 
         public int Number_of_products { get; set; }
 
-
-
-
-
     }
 }
