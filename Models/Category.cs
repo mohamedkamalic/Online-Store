@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace Online_Store.Models
+namespace OnlineStore.Models
 {
     [Table("Category")]
     public class Category

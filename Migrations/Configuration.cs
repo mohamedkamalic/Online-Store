@@ -1,4 +1,4 @@
-using Online_Store.Models;
+using OnlineStore.Models;
 using OnlineStore.Models;
 
 namespace OnlineStore.Migrations
