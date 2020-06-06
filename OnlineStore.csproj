@@ -193,6 +193,10 @@
     <Compile Include="Migrations\202006041108572_AddcategoryFields.Designer.cs">
       <DependentUpon>202006041108572_AddcategoryFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006062317449_addCarttoDatabase.cs" />
+    <Compile Include="Migrations\202006062317449_addCarttoDatabase.Designer.cs">
+      <DependentUpon>202006062317449_addCarttoDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -293,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006041108572_AddcategoryFields.resx">
       <DependentUpon>202006041108572_AddcategoryFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006062317449_addCarttoDatabase.resx">
+      <DependentUpon>202006062317449_addCarttoDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
