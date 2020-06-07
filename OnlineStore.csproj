@@ -232,6 +232,35 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="style\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="style\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="style\assets\css\Auto-Modal-Popup.css" />
+    <Content Include="style\assets\css\Navigation-with-Search.css" />
+    <Content Include="style\assets\css\smoothproducts.css" />
+    <Content Include="style\assets\fonts\font-awesome.min.css" />
+    <Content Include="style\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="style\assets\fonts\simple-line-icons.min.css" />
+    <Content Include="style\assets\fonts\Simple-Line-Icons.svg" />
+    <Content Include="style\assets\img\avatars\avatar1.jpg" />
+    <Content Include="style\assets\img\avatars\avatar2.jpg" />
+    <Content Include="style\assets\img\avatars\avatar3.jpg" />
+    <Content Include="style\assets\img\scenery\image1.jpg" />
+    <Content Include="style\assets\img\scenery\image4.jpg" />
+    <Content Include="style\assets\img\scenery\image5.jpg" />
+    <Content Include="style\assets\img\scenery\image6.jpg" />
+    <Content Include="style\assets\img\star-empty.svg" />
+    <Content Include="style\assets\img\star-half-empty.svg" />
+    <Content Include="style\assets\img\star.svg" />
+    <Content Include="style\assets\img\tech\image1.jpg" />
+    <Content Include="style\assets\img\tech\image2.jpg" />
+    <Content Include="style\assets\img\tech\image3.png" />
+    <Content Include="style\assets\img\tech\image4.jpg" />
+    <Content Include="style\assets\img\WhatsApp Image 2018-10-29 at 11.18.38 PM.jpeg" />
+    <Content Include="style\assets\js\Auto-Modal-Popup.js" />
+    <Content Include="style\assets\js\jquery.min.js" />
+    <Content Include="style\assets\js\smart-forms.min.js" />
+    <Content Include="style\assets\js\smoothproducts.min.js" />
+    <Content Include="style\assets\js\theme.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -268,8 +297,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Products\CatalogPage.cshtml" />
     <Content Include="Views\Products\product_page.cshtml" />
-    <Content Include="Views\Products\ProductForm2.cshtml" />
-    <Content Include="Views\Cart\_View.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
