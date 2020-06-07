@@ -23,5 +23,17 @@ namespace OnlineStore.Controllers
             return PartialView("_View", results);
 
         }
+
+        public ActionResult RemoveFromCart(int id)
+        {
+            var cartItem = _context.Cart.SingleOrDefault(c => c.Product_id == id);
+            if (cartItem != null)
+            {
+                _context.Cart.Remove(cartItem);
+                _context.SaveChanges();
+            }
+
+            return new EmptyResult();
+        }
     }
 }
