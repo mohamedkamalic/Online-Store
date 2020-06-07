@@ -297,7 +297,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Products\CatalogPage.cshtml" />
     <Content Include="Views\Products\product_page.cshtml" />
-
+    <Content Include="Views\Cart\_View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

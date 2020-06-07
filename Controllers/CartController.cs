@@ -23,6 +23,24 @@ namespace OnlineStore.Controllers
             return PartialView("_View", results);
 
         }
+        public ActionResult AddtoCart(int id)
+        {
+
+            var product = _context.Cart.SingleOrDefault(p => p.Product_id == id);
+            if (product == null)
+            {
+                var cartItem = new Cart()
+                {
+                    Product_id = id,
+                    Added_at = DateTime.Now,
+                };
+                _context.Cart.Add(cartItem);
+                _context.SaveChanges();
+
+            }
+            return RedirectToAction("Index", "Products");
+        }
+
 
         public ActionResult RemoveFromCart(int id)
         {
