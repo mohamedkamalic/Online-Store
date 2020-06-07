@@ -1,0 +1,111 @@
+﻿
+@model IEnumerable<OnlineStore.Models.Product>
+
+@{
+
+
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Shopping Cart - Brand</title>
+    <link rel="stylesheet" href="../../style/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asul">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+    <link rel="stylesheet" href="../../style/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../style/assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="../../style/assets/css/Auto-Modal-Popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
+    <link rel="stylesheet" href="../../style/assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="../../style/assets/css/smoothproducts.css">
+</head>
+
+<body>
+    <main class="page shopping-cart-page">
+        <section class="clean-block clean-cart dark" style="padding-bottom: 37px;">
+            <div class="container">
+                <div class="block-heading" style="padding-top: 2px;"></div>
+                <div class="content">
+                    <div class="row no-gutters">
+                        <div class="col-md-12 col-lg-12 col-xl-12">
+
+
+                            @foreach (var product in Model)
+                            {
+
+
+                                <div class="items" style="padding-left: 8px;padding-bottom: 10px;">
+                                    <div class="product">
+                                        <div class="row d-xl-flex justify-content-center align-items-center justify-content-xl-start" style="margin: 0;">
+                                            <div class="col-md-4 col-lg-4" style="padding-left: 0;">
+                                                <div class="product-image" style="padding: 0;"><img class="img-fluid d-block mx-auto image" src="@Url.Content(product.Image)" /></div>
+                                            </div>
+                                            <div class="col-md-5 col-xl-4 product-info">
+                                                <a class="product-name" href="#">@product.Name</a>
+                                                <div class="product-specs">
+                                                    <div><span> </span><span class="value"></span></div>
+                                                    <div><span> </span><span class="value"></span></div>
+                                                    <div><span> </span><span class="value"></span></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 col-md-2 col-lg-1 col-xl-1 price" style="padding-left: 0px;"><span>$@product.Price</span></div>
+                                            <div class="col offset-md-0 offset-xl-1" style="padding-right: 0px;padding-left: 23px;"><button class="btn btn-primary" type="button" style="background-color: rgb(255,0,0);" id="remove" data-product-id="@product.Id">Remove</button></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <h5 style="color: #9a9c99; margin-top: 5px;">
+
+                                                    <em>
+                                                        @{
+
+                                                            var time = DateTime.Now.Subtract(product.Cart.Added_at);
+                                                            var showTime = time.Days > 7 ? $"{time.Days / 7} week ago"
+                                                                : (time.Days > 0 ? $"{time.Days} days ago "
+                                                                : (time.Hours > 0 ? $"{time.Hours} hours ago "
+                                                                    : (time.Minutes > 0 ? $"{time.Minutes} minutes ago" : "Now")));
+
+                                                        }
+                                                        added to cart @showTime
+                                                    </em>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../../style/assets/js/jquery.min.js"></script>
+    <script src="../../style/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../style/assets/js/smart-forms.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="../../style/assets/js/smoothproducts.min.js"></script>
+    <script src="../../style/assets/js/theme.js"></script>
+    <script src="../../style/assets/js/Auto-Modal-Popup.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $(document).on('click','#remove',
+            function() {
+                var button = $(this);
+                $.ajax({
+                    url: '/Cart/RemoveFromCart/' + (button.attr("data-product-id")),
+                    success: function(data) {
+
+                        button.parents(".items").remove();
+                    }
+                });
+            });
+    })
+    </script>
+</body>
+
+</html>

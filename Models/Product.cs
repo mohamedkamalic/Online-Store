@@ -31,7 +31,7 @@ namespace OnlineStore.Models
         public virtual Category Category { get; set; }
 
 
-
+        public virtual Cart Cart { get; set; }
 
     }
 }

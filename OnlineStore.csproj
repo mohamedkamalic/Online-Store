@@ -297,22 +297,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Products\CatalogPage.cshtml" />
     <Content Include="Views\Products\product_page.cshtml" />
-    <Content Include="Views\Products\ProductForm2.cshtml" />
-    <Content Include="Views\Shared\_customLayout.cshtml" />
-    <Content Include="style\assets\fonts\fontawesome-webfont.eot" />
-    <Content Include="style\assets\fonts\fontawesome-webfont.ttf" />
-    <Content Include="style\assets\fonts\fontawesome-webfont.woff" />
-    <Content Include="style\assets\fonts\fontawesome-webfont.woff2" />
-    <Content Include="style\assets\fonts\FontAwesome.otf" />
-    <Content Include="style\assets\fonts\Simple-Line-Icons.eot" />
-    <Content Include="style\assets\fonts\Simple-Line-Icons.ttf" />
-    <Content Include="style\assets\fonts\Simple-Line-Icons.woff" />
-    <Content Include="style\assets\fonts\Simple-Line-Icons.woff2" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\" />
-    <Folder Include="Views\Cart\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
